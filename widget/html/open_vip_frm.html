@@ -42,7 +42,7 @@
        <img id="imgurl5" src="../image/7.png" tapmode onclick="openUrl5()">
         <img id="imgurl1" src="../image/30.png" tapmode onclick="openUrl1()">
         <img id="imgurl2" src="../image/90.png" tapmode onclick="openUrl2()">
-        <img id="imgurl1" src="../image/180.png" tapmode onclick="openUrl6()">
+        <img id="imgurl6" src="../image/180.png" tapmode onclick="openUrl6()">
         <img id="imgurl3" src="../image/365.png" tapmode onclick="openUrl3()">
         <img id="imgurl4" src="../image/yongjiu.png" tapmode onclick="openUrl4()">
       </div>
@@ -125,6 +125,8 @@
                 localStorage.setItem('url2',ret.msg['url2']);
                 localStorage.setItem('url3',ret.msg['url3']);
                 localStorage.setItem('url4',ret.msg['url4']);
+                localStorage.setItem('url5',ret.msg['url4']);
+                localStorage.setItem('url6',ret.msg['url4']);
                 var weichatdiv = $api.byId('weichat');
                 weichatdiv.innerHTML = localStorage.getItem('url')+'<br>'+localStorage.getItem('user_weichat');
                 api.sendEvent({
@@ -184,6 +186,28 @@
         return;
       }else {
         toBanner(localStorage.getItem('url4'));
+      }
+    }
+    function openUrl5(){
+      if (localStorage.getItem('url5') == '无数据') {
+        keFu();
+        return;
+      }else if (localStorage.getItem('url15') == '') {
+        keFu();
+        return;
+      }else {
+        toBanner(localStorage.getItem('url5'));
+      }
+    }
+    function openUrl6(){
+      if (localStorage.getItem('url6') == '无数据') {
+        keFu();
+        return;
+      }else if (localStorage.getItem('url6') == '') {
+        keFu();
+        return;
+      }else {
+        toBanner(localStorage.getItem('url6'));
       }
     }
 
